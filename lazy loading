@@ -1,0 +1,22 @@
+ app (root)
+ { path: "", redirectTo: "/name", pathMatch: "full" },
+  {
+    path: 'name',
+    loadChildren: () => import('./modules/name/name.module').then(name => name.name)
+  },
+  {
+    path: '**', redirectTo: "name/name", pathMatch: 'full'
+  },
+
+modules
+  {
+    path: '',
+    component: IndexComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'name', component: HomeComponent },
+    ]
+  },
+  {
+    path: '**', redirectTo: "name", pathMatch: 'full'
+  },
