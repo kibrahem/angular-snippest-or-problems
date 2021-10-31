@@ -1,0 +1,5 @@
+import { Title } from '@angular/platform-browser';
+constructor(private _Title:Title) {
+    this._Title.setTitle("تسجيل دخول");
+
+}
